@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  color: white;
+  font-family: Roboto, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.bandeau {
+  width: 100%;
+}
+
+
