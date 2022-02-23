@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Video;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -93,4 +94,15 @@ class DefaultController extends AbstractController
             'id'=>$id
         ]);
     }
+
+    /**
+     * @Route("/video/ajouter", name="ajout_video")
+     */
+    public function ajouter ()
+    {
+        $video = new Video;
+
+    }
+
+
 }

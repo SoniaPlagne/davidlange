@@ -1,22 +1,20 @@
 <div class="bandeau">
-    <link
-        class="logoDL"
-        href="{{ asset('/images/logo_DavidLange_blanc.png') }}"
-        alt="logo david lange"
-  />
-
-    <div class="navbar">
-        <li>
-            <link
-            rel="icon"
-            href="{{ asset('/images/icon_maison_blanc.svg') }}"
-            alt="icone maison pour revenir sur la page d'accueuil"
-        />
-        </li>
-         <li><a href="/savoir">Savoire-faire</a></li>
-         <li><a href="/histoire">Histoire</a></li>
-         <li><a href="/emploi">Emploi</a></li>
-        <li><a href="/actu">Actualités</a></li>
-         <li><a href="/contact">Contact</a></li>
+    <div class="logo">
+        <link class="logoDL" href="{{ asset('images/logo_DavidLange_blanc.png') }}" alt="logo david lange" />
     </div>
+  
+    <link
+      rel="icon"
+      href="{{ asset('images/icon_maison_blanc.svg') }}"
+      alt="icone maison pour revenir sur la page d'accueil"
+    />
+    <nav class="navbar">
+        <ul class="menu">
+            <li><a href="/savoir">Savoir-faire</a></li>
+            <li><a href="/histoire">Histoire</a></li>
+            <li><a href="/emploi">Emploi</a></li>
+            <li><a href="/actu">Actualités</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+    </nav>
 </div>

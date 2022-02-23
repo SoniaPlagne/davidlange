@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>
             {% block title %} 
                 David Lange 
@@ -12,25 +13,14 @@
         <link rel="icon" type="image" href="{{ asset('images/favicon_DavidLange.ico') }}" alt="icone dl pour David Lange">    
 
         {% block stylesheets %}
-            {{
-            encore_entry_link_tags("app")
-            }}
         {% endblock %} 
-        
-        {% block javascripts %}
-            {{
-            encore_entry_script_tags("app")
-            }}
-        {% endblock %}
-
     </head>
 
     <body>
         {% block body %}
-        <ul>
-        <li><a href="{{ url1 }}">Vidéo 1</a></li>
-        </ul>
+        {% endblock %}
 
+        {% block javascripts %}
         {% endblock %}
     </body>
 </html>
