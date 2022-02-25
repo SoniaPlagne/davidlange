@@ -33,6 +33,8 @@ class DefaultController extends AbstractController
         return $this->render('default/actu.html.twig');
     }
 
+    
+
      /**
      * @Route("/emploi", name="emploi")
      */
