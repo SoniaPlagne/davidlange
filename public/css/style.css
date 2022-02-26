@@ -6,6 +6,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: auto;
   background-color: black;
   color: white;
   font-family: Roboto, Helvetica, sans-serif;
@@ -18,21 +20,37 @@ body {
 }
 
 .acces {
-  float: right;
-  margin: 10px 10px 10px 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+}
+
+.acces img {
+  vertical-align: middle;
 }
 
 a.linkacces {
   color: white;
   text-decoration: none;
+  margin: 10px 30px;
+}
+
+.iconacces{
+  margin-left: 10px;
 }
 
 .bandeau {
-  height: 150px;
+  height: 20%;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .navbar {
-  margin: 50px 10px 50px 300px;
+  max-width: 100%;
+  text-align: right;
   text-transform: uppercase;
 }
 
@@ -48,13 +66,11 @@ ul.menu {
   color: white;
   font-size: 1.1em;
   font-size: bold;
+  margin-left: 50px;
 }
 
-.cont-logo {
-  height: 50px;
-  width: 400px;
-}
-a.logo {
-  max-width: 30%
+.logo img {
+  margin-left: 30px;
+  width: 350px;
   height: auto;
 }
