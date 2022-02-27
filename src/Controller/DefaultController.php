@@ -26,7 +26,7 @@ class DefaultController extends AbstractController
     }
 
      /**
-     * @Route("/actu", name="actualités")
+     * @Route("/actualités", name="actualités")
      */
     public function actu(): Response
     {
@@ -44,7 +44,7 @@ class DefaultController extends AbstractController
     }
 
      /**
-     * @Route("/savoir", name="savoir")
+     * @Route("/savoir-faire", name="savoir")
      */
     public function savoir(): Response
     {
