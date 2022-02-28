@@ -102,12 +102,16 @@ h1 {
   line-height: 2em;
 }
 
-.titre-home{
-  max-width: 30%
-}
+
 
 h1.titre{
   text-align: center;
+}
+h1.titre-home{
+  line-height: 2.6em;
+  max-width: 30%;
+  letter-spacing: 0.3em;
+  font-size: 3em;
 }
 
 h2{
@@ -140,4 +144,22 @@ a{
 
 label{
   font-size: 1.4em;
+}
+
+.content-home{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connexion{
+  margin: 50px;
+
+}
+
+.slider{
+  max-width: 50%;
+  height: auto;
+  margin-left: 10%;
+
 }
