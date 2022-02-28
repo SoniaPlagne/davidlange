@@ -105,3 +105,27 @@ h1 {
 .titre-home{
   max-width: 30%
 }
+
+h1.titre{
+  text-align: center;
+}
+
+h2{
+  font-size: 2.2em;
+}
+
+h3{
+  font-size: 1.8em;
+  font-style: italic;
+
+}
+
+p{
+  font-size: 1.6em;
+  line-height: 2em;
+  margin: 0 0 50px 50px;
+}
+
+a{
+  color: #cfb44f;
+}
