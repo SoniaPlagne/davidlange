@@ -82,7 +82,7 @@ class DefaultController extends AbstractController
     public function listeVideos(): Response
     {
         $url1 = $this->generateUrl('vue_video', ['id'=>1]);
-        return $this->render('default/liste.html.twig', [
+        return $this->render('default/videos.html.twig', [
             'url1' =>$url1,
         ]);
     }

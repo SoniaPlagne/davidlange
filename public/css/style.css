@@ -129,3 +129,15 @@ p{
 a{
   color: #cfb44f;
 }
+
+.center{
+  text-align: center;
+}
+
+.light{
+  font-weight:lighter;
+}
+
+label{
+  font-size: 1.4em;
+}
