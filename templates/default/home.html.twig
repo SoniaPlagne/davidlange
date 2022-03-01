@@ -10,29 +10,40 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
 <div class="content-home">
   <h1 class="titre-home">Spécialiste<br />thermoformage <br />et<br />résine acrylique<br />depuis 1969.</h1>
   <div class="slider">
-    <div><img src="/images/photos/E035984.jpg" alt="a remplir" /></div>
-    <div><img src="/images/photos/E036071.jpg" alt="a remplir" /></div>
+    <div>
+      <img
+        src="/images/photos/Portes_DavidLange_Dacquacryl.jpg"
+        alt="Portes d'un meuble buffet bas blanc en Daquacryl qui se chevauchent"
+      />
+    </div>
+    <div>
+      <img
+        src="/images/photos/Chrome_DavidLange_Daquacryl.jpg"
+        alt="Elements chromés présent sur un meuble en Daquacryl bleu"
+      />
+    </div>
+    <div>
+      <img
+        src="/images/photos/Polissage plexiglass transparent_DavidLange.jpg"
+        alt="Polissage plexiglass transparent"
+      />
+    </div>
   </div>
 </div>
 
-
-
-{% endblock %} 
-
-{% block javascripts %}
+{% endblock %} {% block javascripts %}
 
 <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script>
-  $(document).ready(function(){
-    $('.slider').slick({
-    });
+  $(document).ready(function () {
+    $(".slider").slick({});
   });
 
-  $('.center').slick({
+  $(".center").slick({
     centerMode: true,
-    centerPadding: '60px',
+    centerPadding: "60px",
     slidesToShow: 3,
     responsive: [
       {
@@ -40,22 +51,21 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 3
-        }
+          centerPadding: "40px",
+          slidesToShow: 3,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           arrows: false,
           centerMode: true,
-          centerPadding: '40px',
-          slidesToShow: 1
-        }
-      }
-    ]
+          centerPadding: "40px",
+          slidesToShow: 1,
+        },
+      },
+    ],
   });
-                  
 </script>
 
 {% endblock %}
