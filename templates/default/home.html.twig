@@ -9,7 +9,7 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
 
 <div class="content-home">
   <h1 class="titre-home">Spécialiste<br />thermoformage <br />et<br />résine acrylique<br />depuis 1969.</h1>
-  <div class="slider">
+  <div class="carousel">
     <div>
       <img
         src="/images/photos/Portes_DavidLange_Dacquacryl.jpg"
@@ -28,6 +28,7 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
         alt="Polissage plexiglass transparent"
       />
     </div>
+    
   </div>
 </div>
 
@@ -38,13 +39,16 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
 <script type="text/javascript" src="slick/slick.min.js"></script>
 <script>
   $(document).ready(function () {
-    $(".slider").slick({});
+    $(".carousel").slick({
+      centerMode:true
+    });
+   
   });
 
   $(".center").slick({
     centerMode: true,
     centerPadding: "60px",
-    slidesToShow: 3,
+    slidesToShow: 4,
     responsive: [
       {
         breakpoint: 768,
@@ -52,7 +56,7 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
           arrows: false,
           centerMode: true,
           centerPadding: "40px",
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
       {
@@ -66,6 +70,9 @@ depuis 1969. Inventeur du Daquacryl, résine de finition très résistante avec 
       },
     ],
   });
+
+
+  
 </script>
 
 {% endblock %}

@@ -7,19 +7,10 @@
 {% block body %}
     {% include 'menu/_header.html.twig' %}   
     
-    <h1>Retrouvez l'ensemble de nos actualités ci-dessous
-        {% if brouillon %}
-            brouillon
-        {% endif %}
-    </h1>
+    <h1>Retrouvez l'ensemble de nos actualités</h1>
 
-    <ul>
-        {% for article in articles %}
-            <li>
-                <a href="{{ path('vue_article', { 'id':article.id }) }}">{{ article.titre }}</a> {{ article.dateCreation|date('d/m/Y')}}
-            </li>
-        {% endfor %}
-    </ul>
+    {% if url1 is defined }
 
+   
 
 {% endblock %}

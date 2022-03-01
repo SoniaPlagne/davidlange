@@ -109,7 +109,7 @@ h1.titre{
 }
 h1.titre-home{
   line-height: 2.6em;
-  max-width: 30%;
+
   letter-spacing: 0.3em;
   font-size: 3em;
 }
@@ -149,17 +149,17 @@ label{
 .content-home{
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .connexion{
   margin: 50px;
-
 }
 
-.slider{
-  max-width: 50%;
+.carousel{
+  max-width: 60%;
   height: auto;
-  margin-left: 10%;
-
+}
+  
+.emploi{
+  text-align: center;
 }

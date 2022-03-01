@@ -17,6 +17,14 @@ class DefaultController extends AbstractController
         return $this->render('default/home.html.twig');
     }
 
+     /**
+     * @Route("/savoir-faire", name="savoir")
+     */
+    public function savoir(): Response
+    {
+        return $this->render('default/savoir.html.twig');
+    }
+
     /**
      * @Route("/histoire", name="histoire")
      */
@@ -25,31 +33,76 @@ class DefaultController extends AbstractController
         return $this->render('default/histoire.html.twig');
     }
 
-     /**
-     * @Route("/actualités", name="actualités")
-     */
-    public function actu(): Response
-    {
-        return $this->render('default/actu.html.twig');
-    }
 
+     /**
+     * @Route("/emploi", name="liste_emplois",methods={"GET"})
+     */
+    public function listeEmplois(): Response
+    {
+        $url1 = $this->generateUrl('emploi', ['id' =>1]);
+        $url2 = $this->generateUrl('emploi', ['id' =>2]);
+        $url3 = $this->generateUrl('emploi', ['id' =>3]);
+
+        $emplois = [
+            [
+                'titre' => 'Emploi n°1',
+                'url' => $url1
+            ],
+            [
+                'titre' => 'Emploi n°2',
+                'url' => $url2
+            ],
+            [
+                'titre' => 'Emploi n°3',
+                'url' => $url3
+            ],
+
+        ];
+        
+        return $this->render('default/emploi.html.twig', [
+            'emplois' =>$emplois
+        ]);
+    }
     
-
-     /**
-     * @Route("/emploi", name="emploi")
+    /**
+     * @Route("/emploi/{id}", name="vue_emploi", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function emploi(): Response
+    public function vueEmploi($id)
     {
-        return $this->render('default/emploi.html.twig');
+
+        return $this->render('default/vueEmploi.html.twig', [
+            'id' =>$id
+        ]);
     }
 
-     /**
-     * @Route("/savoir-faire", name="savoir")
+
+    /**
+     * @Route("/actualites", name="liste_actualites", methods={"GET"})
      */
-    public function savoir(): Response
+    public function listeActualites(): Response
     {
-        return $this->render('default/savoir.html.twig');
+        $url1 = $this->generateUrl('vue_actualite', ['id' =>1]);
+        $url2 = $this->generateUrl('vue_actualite', ['id' =>2]);
+        $url3 = $this->generateUrl('vue_actualite', ['id' =>3]);
+        
+        return $this->render('default/actu.html.twig', [
+            'url1' =>$url1,
+            'url2' =>$url2,
+            'url3' =>$url3,
+        ]);
     }
+
+    /**
+     * @Route("/actualites/{id}", name="vue_actualite", requirements={"id"="\d+"}, methods={"GET"})
+     */
+    public function vueActualite($id)
+    {
+
+        return $this->render('default/vueActualite.html.twig', [
+            'id' =>$id
+        ]);
+    }
+
 
      /**
      * @Route("/contact", name="contact")
@@ -75,7 +128,6 @@ class DefaultController extends AbstractController
         return $this->render('default/mentions.html.twig');
     }
 
-
-
-
+     
+    
 }
