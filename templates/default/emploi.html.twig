@@ -13,7 +13,7 @@
 
     <ul>
       {% for emploi in emplois %}
-        <li><a href="{{ emploi['url'] }}">{{ emploi['titre']}}</a></li>
+        <li><a href="{{ path('vue_emploi', {'id':emploi['id'] }) }}" class="liste">{{ emploi['titre']}}</a></li>
       {% endfor %}
     </ul>
 

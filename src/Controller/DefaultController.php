@@ -2,7 +2,9 @@
 
 namespace App\Controller;
 
+use App\Entity\Emploi;
 use App\Entity\Video;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -39,22 +41,19 @@ class DefaultController extends AbstractController
      */
     public function listeEmplois(): Response
     {
-        $url1 = $this->generateUrl('emploi', ['id' =>1]);
-        $url2 = $this->generateUrl('emploi', ['id' =>2]);
-        $url3 = $this->generateUrl('emploi', ['id' =>3]);
-
+        
         $emplois = [
             [
                 'titre' => 'Emploi n°1',
-                'url' => $url1
+                'id' => 1
             ],
             [
                 'titre' => 'Emploi n°2',
-                'url' => $url2
+                'id' => 2
             ],
             [
                 'titre' => 'Emploi n°3',
-                'url' => $url3
+                'id' => 3
             ],
 
         ];
@@ -74,6 +73,25 @@ class DefaultController extends AbstractController
             'id' =>$id
         ]);
     }
+    /**
+     * @Route("/emploi/ajouter", name="ajout_emploi")
+     */
+    public function ajouter(EntityManagerInterface $manager){
+/* Symfony transforme la variable manager en objet EntityManagerInterface sur la route emploi/ajouter,ce sont les injections de dépendances. On injecte des classes à travers les paramètres de nos fonctions dans la partie Controller*/
+        $emploi = new Emploi();
+        $emploi->setTitre("Titre de l'emploi proposé");
+        $emploi->setDescriptif("Ceci est le descriptif de l'emploi proposé");
+        
+/*le persist sert à créer la nouvelle entité (emploi qu'il ne connait pas encore), la créer en BDD et lui ajouter un id. La méthode flush sert à enregistrer le nouvel article en BDD.Flush est à utiliser à chaque fois qu'on veut injecter des données en BDD.*/
+        $manager->persist($emploi);
+
+        $manager->flush();
+
+        die;
+
+
+
+    }
 
 
     /**
@@ -81,14 +99,29 @@ class DefaultController extends AbstractController
      */
     public function listeActualites(): Response
     {
-        $url1 = $this->generateUrl('vue_actualite', ['id' =>1]);
-        $url2 = $this->generateUrl('vue_actualite', ['id' =>2]);
-        $url3 = $this->generateUrl('vue_actualite', ['id' =>3]);
         
-        return $this->render('default/actu.html.twig', [
-            'url1' =>$url1,
-            'url2' =>$url2,
-            'url3' =>$url3,
+        $actualites = [
+            [
+                'titre' => 'Actualité n°1',
+                'id' => 1
+            ],
+            [
+                'titre' => 'Actualité n°2',
+                'id' => 2
+            ],
+            [
+                'titre' => 'Actualité n°3',
+                'id' => 3
+            ],
+            [
+                'titre' => 'Actualité n°4',
+                'id' => 4
+            ],
+
+        ];
+        
+        return $this->render('default/actualites.html.twig', [
+            'actualites' =>$actualites
         ]);
     }
 

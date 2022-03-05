@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\ArticleRepository;
+use App\Repository\ActualiteRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass=ArticleRepository::class)
+ * @ORM\Entity(repositoryClass=ActualiteRepository::class)
  */
-class Article
+class Actualite
 {
     /**
      * @ORM\Id
@@ -26,11 +26,6 @@ class Article
      * @ORM\Column(type="text")
      */
     private $contenu;
-
-    /**
-     * @ORM\Column(type="date", nullable=true)
-     */
-    private $dateCreation;
 
     public function getId(): ?int
     {
@@ -57,18 +52,6 @@ class Article
     public function setContenu(string $contenu): self
     {
         $this->contenu = $contenu;
-
-        return $this;
-    }
-
-    public function getDateCreation(): ?\DateTimeInterface
-    {
-        return $this->dateCreation;
-    }
-
-    public function setDateCreation(?\DateTimeInterface $dateCreation): self
-    {
-        $this->dateCreation = $dateCreation;
 
         return $this;
     }

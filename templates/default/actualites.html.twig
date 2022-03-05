@@ -8,8 +8,12 @@
     {% include 'menu/_header.html.twig' %}   
     
     <h1>Retrouvez l'ensemble de nos actualités</h1>
-
-    {% if url1 is defined }
+    <ul>
+        {% for actualite in actualites%}
+        <li><a href="{{ path('vue_actualite', {'id':actualite['id'] }) }}" class="liste">{{ actualite['titre']}}</a></li>
+        {% endfor %}
+    </ul>
+  
 
    
 
