@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %} 
 
-{% block title %} Emploi n°{{ id }} 
+{% block title %} 
+    {{emploi.titre}}
 {% endblock %} 
 
 {% block body %} 
     {% include 'menu/_header.html.twig' %}
-    <h1>Emploi n°{{id}}</h1>
-    <p>descriptif emploi</p>
+    <h1>{{emploi.titre}}</h1>
+    <p>{{emploi.descriptif}}</p>
     
 {% endblock %}

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Emploi;
 use App\Entity\Video;
+use App\Repository\EmploiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -39,24 +40,10 @@ class DefaultController extends AbstractController
      /**
      * @Route("/emploi", name="liste_emplois",methods={"GET"})
      */
-    public function listeEmplois(): Response
+    public function listeEmplois(EmploiRepository $emploiRepository): Response
     {
+        $emplois = $emploiRepository->findAll();
         
-        $emplois = [
-            [
-                'titre' => 'Emploi n°1',
-                'id' => 1
-            ],
-            [
-                'titre' => 'Emploi n°2',
-                'id' => 2
-            ],
-            [
-                'titre' => 'Emploi n°3',
-                'id' => 3
-            ],
-
-        ];
         
         return $this->render('default/emploi.html.twig', [
             'emplois' =>$emplois
@@ -66,11 +53,13 @@ class DefaultController extends AbstractController
     /**
      * @Route("/emploi/{id}", name="vue_emploi", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function vueEmploi($id)
+    public function vueEmploi(EmploiRepository $emploiRepository, $id)
     {
+        $emploi = $emploiRepository->find($id);
+
 
         return $this->render('default/vueEmploi.html.twig', [
-            'id' =>$id
+            'emploi' =>$emploi
         ]);
     }
     /**
