@@ -76,7 +76,7 @@ class DefaultController extends AbstractController
 
         $manager->flush();
 
-        die;
+
 
 
 
