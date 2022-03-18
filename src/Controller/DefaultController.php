@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Actualite;
 use App\Entity\Emploi;
 use App\Entity\Video;
+use App\Repository\ActualiteRepository;
 use App\Repository\EmploiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -53,61 +55,24 @@ class DefaultController extends AbstractController
     /**
      * @Route("/emploi/{id}", name="vue_emploi", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function vueEmploi(EmploiRepository $emploiRepository, $id)
+    public function vueEmploi(Emploi $emploi, $id)
     {
-        $emploi = $emploiRepository->find($id);
 
 
         return $this->render('default/vueEmploi.html.twig', [
             'emploi' =>$emploi
         ]);
     }
-    /**
-     * @Route("/emploi/ajouter", name="ajout_emploi")
-     */
-    public function ajouter(EntityManagerInterface $manager){
-/* Symfony transforme la variable manager en objet EntityManagerInterface sur la route emploi/ajouter,ce sont les injections de dépendances. On injecte des classes à travers les paramètres de nos fonctions dans la partie Controller*/
-        $emploi = new Emploi();
-        $emploi->setTitre("Titre de l'emploi proposé");
-        $emploi->setDescriptif("Ceci est le descriptif de l'emploi proposé");
-        
-/*le persist sert à créer la nouvelle entité (emploi qu'il ne connait pas encore), la créer en BDD et lui ajouter un id. La méthode flush sert à enregistrer le nouvel article en BDD.Flush est à utiliser à chaque fois qu'on veut injecter des données en BDD.*/
-        $manager->persist($emploi);
-
-        $manager->flush();
-
-
-
-
-
-    }
+    
 
 
     /**
      * @Route("/actualites", name="liste_actualites", methods={"GET"})
      */
-    public function listeActualites(): Response
+    public function listeActualites(ActualiteRepository $actualiteRepository): Response
     {
         
-        $actualites = [
-            [
-                'titre' => 'Actualité n°1',
-                'id' => 1
-            ],
-            [
-                'titre' => 'Actualité n°2',
-                'id' => 2
-            ],
-            [
-                'titre' => 'Actualité n°3',
-                'id' => 3
-            ],
-            [
-                'titre' => 'Actualité n°4',
-                'id' => 4
-            ],
-
-        ];
+        $actualites = $actualiteRepository->findAll();
         
         return $this->render('default/actualites.html.twig', [
             'actualites' =>$actualites
@@ -117,11 +82,11 @@ class DefaultController extends AbstractController
     /**
      * @Route("/actualites/{id}", name="vue_actualite", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function vueActualite($id)
+    public function vueActualite(Actualite $actualite, $id)
     {
 
         return $this->render('default/vueActualite.html.twig', [
-            'id' =>$id
+            'actualite' =>$actualite
         ]);
     }
 

@@ -7,12 +7,16 @@
 {% block body %}
     {% include 'menu/_header.html.twig' %}   
     
-    <h1>Retrouvez l'ensemble de nos actualités</h1>
+    <h1 class="center">Retrouvez l'ensemble de nos actualités</h1>
+
+    {% if actualites is defined %}
     <ul>
-        {% for actualite in actualites%}
-        <li><a href="{{ path('vue_actualite', {'id':actualite['id'] }) }}" class="liste">{{ actualite['titre']}}</a></li>
+        {% for actualite in actualites %}
+        <li><a href="{{ path('vue_actualite', {'id':actualite.id }) }}" class="liste">{{actualite.titre}}</a></li>
         {% endfor %}
     </ul>
+
+    {% endif %}
   
 
    

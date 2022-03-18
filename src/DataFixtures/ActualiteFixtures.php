@@ -14,7 +14,7 @@ class ActualiteFixtures extends Fixture
 
         {
             $actualite = new Actualite();
-            $actualite->setTitre("Titre de l'actualitén°".$i);
+            $actualite->setTitre("Titre de l'actualité n°".$i);
             $actualite->setContenu("Ceci est le contenu de l'actualité");
 
             $manager->persist($actualite);
