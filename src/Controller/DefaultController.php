@@ -55,7 +55,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/emploi/{id}", name="vue_emploi", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function vueEmploi(Emploi $emploi, $id)
+    public function vueEmploi(Emploi $emploi)
     {
 
 
@@ -82,7 +82,7 @@ class DefaultController extends AbstractController
     /**
      * @Route("/actualites/{id}", name="vue_actualite", requirements={"id"="\d+"}, methods={"GET"})
      */
-    public function vueActualite(Actualite $actualite, $id)
+    public function vueActualite(Actualite $actualite)
     {
 
         return $this->render('default/vueActualite.html.twig', [
