@@ -1,24 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %} Actualités {% endblock %} {% block body %} {% include
+'menu/_header.html.twig' %}
 
-{% block title %}
-    Actualités
-{% endblock %}
+<h1 class="center">Retrouvez l'ensemble de nos actualités</h1>
 
-{% block body %}
-    {% include 'menu/_header.html.twig' %}   
-    
-    <h1 class="center">Retrouvez l'ensemble de nos actualités</h1>
+{% if actualites is defined %}
+<ul>
+  {% for actualite in actualites %}
+  <li>
+    <a href="{{ path('vue_actualite', { id: actualite.id }) }}" class="liste">{{ actualite.titre }}</a>
+  </li>
+  {% endfor %}
+</ul>
 
-    {% if actualites is defined %}
-    <ul>
-        {% for actualite in actualites %}
-        <li><a href="{{ path('vue_actualite', {'id':actualite.id }) }}" class="liste">{{actualite.titre}}</a></li>
-        {% endfor %}
-    </ul>
-
-    {% endif %}
-  
-
-   
-
-{% endblock %}
+{% endif %} {% endblock %}

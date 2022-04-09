@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %} 
+
+
+{% block title %} 
+    Ajouter un Emploi 
+{% endblock %} 
+
+
+{% block body %}
+
+    <div class="form emploi">  
+        {{ form_start(form) }}
+
+        {{ form_errors(form) }}
+            <div class="form titre">
+                {{ form_label(form.titre, null, {'label_attr': {'class':'form-label'}}) }}
+                {{ form_widget(form.titre, {'attr': {'class':'form-control'}}) }}
+            </div>
+            <div class="form descriptif">
+                {{ form_label(form.descriptif, null, {'label_attr': {'class':'form-label'}}) }}
+                {{ form_widget(form.descriptif, {'attr': {'class':'form-control'}}) }}
+            </div>
+            <div class="form rest">
+                {{ form_rest(form) }}
+            </div>
+            
+            <button type="submit" class="btn">Enregistrer</button>
+     
+       
+    {{ form_end(form) }}
+
+    </div>
+
+{% endblock %}

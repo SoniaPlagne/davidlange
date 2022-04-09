@@ -9,6 +9,8 @@ use App\Repository\ActualiteRepository;
 use App\Repository\EmploiRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -64,6 +66,28 @@ class DefaultController extends AbstractController
         ]);
     }
     
+    /**
+     * @Route("/emploi/ajouter", name="ajout_emploi")
+     */
+
+     public function ajouter(EntityManagerInterface $manager)
+     {
+         $form =$this->createFormBuilder()
+         ->add('titre', TextType::class, [
+             'label' => "Titre de l'emploi"
+         ])
+         ->add('descriptif', TextareaType::class, [
+             'label' => "Descriptif du poste proposé"
+         ])
+         ->getForm();
+
+         return $this->render('default/ajoutEmploi.html.twig',[
+             'form' => $form->createView()
+
+         ]);
+
+     }
+
 
 
     /**

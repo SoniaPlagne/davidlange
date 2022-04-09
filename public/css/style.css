@@ -102,68 +102,100 @@ h1 {
   line-height: 2em;
 }
 
-
-
-h1.titre{
+h1.titre {
   text-align: center;
 }
-h1.titre-home{
+h1.titre-home {
   line-height: 2.6em;
 
   letter-spacing: 0.3em;
   font-size: 3em;
 }
 
-h2{
+h2 {
   font-size: 2.2em;
 }
 
-h3{
+h3 {
   font-size: 1.8em;
   font-style: italic;
-
 }
 
-p{
+p {
   font-size: 1.6em;
   line-height: 2em;
   margin: 0 0 50px 50px;
 }
 
-a{
+a {
   color: #cfb44f;
 }
 
-.center{
+.center {
   text-align: center;
 }
 
-.light{
-  font-weight:lighter;
+.light {
+  font-weight: lighter;
 }
 
-label{
+label {
   font-size: 1.4em;
 }
 
-.content-home{
+.content-home {
   display: flex;
   justify-content: space-between;
 }
 
-.connexion{
+.connexion {
   margin: 50px;
 }
 
-.carousel{
+.carousel {
   max-width: 60%;
   height: auto;
 }
-  
-.emploi{
+
+.emploi {
   text-align: center;
 }
 
-.liste{
+.liste {
   font-size: 1.5em;
+}
+
+.form {
+  margin: 5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.contact {
+  margin-left: 12rem;
+}
+.adresse {
+  font-size: 1.6em;
+}
+.nom-entreprise {
+  margin: 8rem 0 2rem 0;
+}
+.rue {
+  margin-bottom: 2rem;
+}
+.tel {
+  margin-bottom: 2rem;
+}
+
+.company {
+  margin-top: 6rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.entreprise {
+  max-width: 40%;
+  height: auto;
+  margin-right: 12rem;
 }
