@@ -138,7 +138,6 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/mentions.html.twig');
     }
-
-     
+    
     
 }
