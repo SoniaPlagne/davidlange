@@ -43,7 +43,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
-    # programmation de la route une fois le user loggé,ci-dessous redirigé vers liste videos
+    # programmation de la route une fois le user loggé,ci-dessous redirigé vers accueil client
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
@@ -51,7 +51,7 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
             return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($this->urlGenerator->generate('liste_videos'));
+        return new RedirectResponse($this->urlGenerator->generate('client'));
 
     }
 

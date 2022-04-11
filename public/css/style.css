@@ -127,10 +127,6 @@ p {
   margin: 0 0 50px 50px;
 }
 
-a {
-  color: #cfb44f;
-}
-
 .center {
   text-align: center;
 }
@@ -210,4 +206,34 @@ label {
 .password,
 .connect {
   margin-left: 6rem;
+}
+
+.btn-client {
+  display: flex;
+  justify-content: center;
+  margin-top: 6rem;
+}
+
+.btn-roche {
+  border-radius: 0.5rem;
+  padding: 2em;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #1d1d1d;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 3rem;
+  text-decoration: none;
+}
+
+.btn-actif {
+  background-color: #cfb44f;
+}
+
+a.btn-actif {
+  text-decoration: none;
+}
+
+.btn-inactif {
+  background-color: #dfdfdf;
 }

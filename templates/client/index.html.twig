@@ -1,20 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %} {% block title %} Accueil client Rochebobois {% endblock %} {% block body %} {% include
+'menu/_header.html.twig' %}
 
-{% block title %}Hello ClientController!{% endblock %}
+<h1 class="center">Bienvenue sur votre accueil client</h1>
+<h2 class="center">Cliquez sur une des rubriques ci-dessous pour accéder à son contenu</h2>
 
-{% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Applications/MAMP/htdocs/davidlange/src/Controller/ClientController.php'|file_link(0) }}">src/Controller/ClientController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Applications/MAMP/htdocs/davidlange/templates/client/index.html.twig'|file_link(0) }}">templates/client/index.html.twig</a></code></li>
-    </ul>
+<div class="btn-client">
+  <button class="video-sav btn-actif btn-roche">
+    <a href="videos.html.twig">Vidéos SAV</a>
+  </button>
+  <button class="fiches-produit btn-inactif btn-roche">Fiches produit</button>
+  <button class="nouveautes btn-inactif btn-roche">Nouveautés</button>
 </div>
 {% endblock %}
