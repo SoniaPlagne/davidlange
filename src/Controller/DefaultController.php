@@ -138,6 +138,15 @@ class DefaultController extends AbstractController
     {
         return $this->render('default/mentions.html.twig');
     }
+
+    /**
+     * @Route("/videos", name="videos")
+     */
+    public function videos(): Response
+    {
+        return $this->render('default/videos.html.twig');
+    }
+    
     
     
 }
