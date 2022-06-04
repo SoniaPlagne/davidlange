@@ -17,25 +17,48 @@
     </a>
     <nav class="navbar">
       <ul class="nav">
+        <!--
         <li>
           <a href="/" class="maison">
-            <img src="/images/icon_maison_blanc_40px.png" alt="icone en forme de maison indiquant le retour à la page d'accueil"/>
+            <img
+              src="/images/icon_maison_blanc_40px.png"
+              alt="icone en forme de maison indiquant le retour à la page d'accueil"
+            />
           </a>
         </li>
-        <li><a href="/savoir-faire" class="menu">Savoir-faire</a></li>
+        -->
+        <li>
+          <a href="/savoir-faire" class="menu">Savoir-faire</a>
+          <div class="sous-menus">
+            <ul class="sous-menu1">
+              <li>
+                <a href="/savoire-faire/thermoformage" class="menu2">Thermoformage</a>
+                <ul class="sous-menu2">
+                  <li>
+                    <a href="/savoire-faire/thermoformage/pmma" class="menu3">PMMA</a>
+                  </li>
+                  <li>
+                    <a href="/savoire-faire/thermoformage/resine-acrylique" class="menu3">Résine Acrylique</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="/savoire-faire/soudage" class="menu2">Soudage</a>
+              </li>
+              <li>
+                <a href="/savoire-faire/conception-et-realisation-de-mobilier" class="menu2">Conception et réalisation de mobilier</a>
+              </li>
+              <li>
+                <a href="/savoire-faire/bureau-d-etudes" class="menu2">Bureau d'études</a>
+              </li>
+            </ul>
+          </div>
+        </li>
         <li><a href="/histoire" class="menu">Histoire</a></li>
         <li><a href="/emploi" class="menu">Emploi</a></li>
         <li><a href="/actualites" class="menu">Actualités</a></li>
-        <li><a href="/contact" class="menu">Contact</a></li>
+        <li><a href="/contact" class="menu menu-contact">Contact</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
-{#
-<link
-  rel="icon"
-  href="{{ asset('images/icon_maison_blanc.svg') }}"
-  alt="icone maison pour revenir sur la page d'accueil"
-/>
-#}

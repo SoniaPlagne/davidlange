@@ -1,33 +1,22 @@
-{% extends 'base.html.twig' %} 
+{% extends 'base.html.twig' %} {% block title %} Offres d'emplois {% endblock %} {% block body %} {% include
+'menu/_header.html.twig' %}
 
-{% block title %} 
-  Offres d'emplois 
-{% endblock %} 
+<h1 class="titre">Si vous souhaitez nous rejoindre, c'est par ici!</h1>
 
-{% block body %} 
-  {% include 'menu/_header.html.twig' %}
+{% if emplois is defined %}
 
-  <h1 class="center">Si vous souhaitez nous rejoindre, c'est par ici!</h1>
+<ul>
+  {% for emploi in emplois %}
+  <li>
+    <a href="{{ path('vue_emploi', { id: emploi.id }) }}" class="liste">{{ emploi.titre }}</a>
+  </li>
+  {% endfor %}
+</ul>
 
-  {% if emplois is defined  %}
+{% elseif emplois is not defined %}
+<p class="emploi">
+  "Nous n'avons actuellement pas de poste à pourvoir, mais vous pouvez si vous le souhaitez nous envoyer votre CV ainsi
+  qu'une lettre de motivation à l'adresse suivante: contact@davidlange.fr"
+</p>
 
-    <ul>
-      {% for emploi in emplois %}
-        <li><a href="{{ path('vue_emploi', {'id':emploi.id }) }}" class="liste">{{emploi.titre}}</a></li>
-      {% endfor %}
-    </ul>
-
-  {% elseif emplois is not defined %}
-    <p class="emploi">
-      "Nous n'avons actuellement pas de poste à pourvoir, mais vous pouvez si vous le souhaitez nous envoyer votre CV ainsi
-      qu'une lettre de motivation à l'adresse suivante: contact@davidlange.fr"
-    </p>
-
-  {% endif %} 
-
-    
-  
-   
-
-
-{% endblock %}
+{% endif %} {% endblock %}
