@@ -1,15 +1,7 @@
-{% extends 'base.html.twig' %} 
-
-{% block title %}
-    {{actualite.titre}}
-{% endblock %} 
-
-{% block body %} 
-    {% include 'menu/_header.html.twig' %}
-    <button>
-        Retour
-    </button> 
-    <h1>{{actualite.titre}}</h1>
-    <p>{{actualite.contenu}}</p>
-    
-{% endblock %}
+{% extends 'base.html.twig' %} {% block title %}
+{{ actualite.titre }}
+{% endblock %} {% block body %} {% include 'menu/_header.html.twig' %}
+<button>Retour</button>
+<h1>{{ actualite.titre }}</h1>
+<p>{{ actualite.contenu }}</p>
+{% include 'menu/_footer.html.twig' %} {% endblock %}

@@ -307,6 +307,56 @@ ul.sous-menu2 {
   flex-wrap: nowrap;
 }
 
+/* FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.footer {
+  padding: 4em 0;
+  font-size: 1.4em;
+  font-weight: lighter;
+}
+
+ul.nav-footer {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+
+ul.networks {
+  list-style-type: none;
+  display: flex;
+  padding: 0;
+}
+
+.menu4 {
+  color: #dfdfdf;
+  margin: 5em 1em 1em 1em;
+  font-size: 1.1em;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+.follow p {
+  font-size: 1.1em;
+  font-weight: lighter;
+  margin: 1em 1em 1em 1em;
+}
+
+.follow {
+  display: flex;
+  align-items: center;
+}
+
+img.social {
+  margin: 2em;
+}
+
+.footer {
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
 /* TIMELINE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .timeline {
