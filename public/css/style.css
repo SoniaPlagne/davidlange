@@ -80,12 +80,13 @@ a.shop {
 }
 
 .btn-shop {
-  border-radius: 5px;
+  border-radius: 4px;
   background-color: white;
   display: flex;
   align-items: center;
   justify-content: space-around;
   margin-bottom: 50px;
+  padding: 0.8em 4em;
 }
 
 .carousel {
@@ -183,7 +184,7 @@ h3 {
 }
 
 .icon-shop {
-  margin: 5px 10px;
+  margin: 1em 5em 1em 0;
 }
 
 label {
@@ -628,4 +629,27 @@ img.social {
   .direction-r .desc {
     margin: 1em 4em 0 4em;
   }
+}
+
+/* GALERIE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.gal {
+  margin: 3em 1em;
+}
+
+.rang {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+img.gal {
+  max-width: 100%;
+  padding: 0 1em;
 }
