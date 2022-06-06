@@ -111,7 +111,7 @@ a.shop {
 }
 
 .connexion {
-  margin: 50px;
+  margin: 5em 0;
   display: flex;
 }
 
@@ -121,9 +121,24 @@ a.shop {
   letter-spacing: 0.2em;
   line-height: 3em;
 }
+
+.container {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  padding: 2em;
+}
+
 .content-home {
   display: flex;
   justify-content: space-between;
+}
+
+.create-account {
+  margin: 0;
+  font-size: 1.4em;
+  display: flex;
+  padding-right: ;
 }
 
 .emploi {
@@ -640,16 +655,6 @@ img.social {
 /* GALERIE
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-.container {
-  width: 100%;
-  height: auto;
-  overflow: hidden;
-}
-
-.gal {
-  margin: 3em 1em;
-}
-
 .rang {
   display: flex;
   flex-wrap: nowrap;
@@ -657,5 +662,5 @@ img.social {
 
 img.gal {
   max-width: 100%;
-  padding: 0 1em;
+  padding: 1em;
 }
