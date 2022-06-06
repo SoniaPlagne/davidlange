@@ -311,7 +311,7 @@ ul.sous-menu2 {
 /* FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .footer {
-  padding: 4em 0;
+  padding: 4em 0 2em;
   font-size: 1.4em;
   font-weight: lighter;
 }
@@ -356,6 +356,12 @@ img.social {
   align-items: flex-start;
   justify-content: space-between;
   width: 100%;
+}
+
+.copyright {
+  font-size: 0.8em;
+  text-align: center;
+  letter-spacing: 0.1em;
 }
 
 /* TIMELINE
