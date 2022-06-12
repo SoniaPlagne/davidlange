@@ -1,6 +1,6 @@
-{% extends 'base.html.twig' %} {% block title %}Accès Privé DavidLange{% endblock %} {% block body %} {% include
+{% extends 'base.html.twig' %} {% block title %}Accès Privé David Lange{% endblock %} {% block body %} {% include
 'menu/_header.html.twig' %}
-< method="post">
+<form method="post">
   {% if error %}
   <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
   {% endif %} {% if app.user %}
@@ -51,12 +51,13 @@
     </div>
 
     <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-  </form>
-  <div class="create-account">Pas encore d'accès client ? 
-    <form action="/register" method="get" target="_blank">
-      <button type="submit" class="btn btn-lg btn-primary connect">Configurer mon compte</button>
-    </form>
   </div>
-
+</form>
+<div class="create-account">
+  Pas encore d'accès client ?
+  <form action="/register" method="get" target="_blank">
+    <button type="submit" class="btn btn-lg btn-primary connect">Configurer mon compte</button>
+  </form>
+</div>
 
 {% include 'menu/_footer.html.twig' %} {% endblock %}

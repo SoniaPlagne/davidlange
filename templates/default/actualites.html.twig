@@ -4,12 +4,17 @@
 <h1 class="titre">Retrouvez l'ensemble de nos actualités</h1>
 
 {% if actualites is defined %}
-<ul>
-  {% for actualite in actualites %}
-  <li>
-    <a href="{{ path('vue_actualite', { id: actualite.id }) }}" class="liste">{{ actualite.titre }}</a>
-  </li>
-  {% endfor %}
-</ul>
+<div id="col">
+  <ul>
+    {% for actualite in actualites %}
+    <li>
+      <a href="{{ path('vue_actualite', { id: actualite.id }) }}" class="liste">{{ actualite.titre }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+</div>
+
 
 {% endif %} {% include 'menu/_footer.html.twig' %} {% endblock %}

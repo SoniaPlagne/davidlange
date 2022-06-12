@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %} {% block title %}Accès Privé David Lange {% endblock %} {% block body %} {% include
+'menu/_header.html.twig' %} {% if error %}
+<div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+<h1 class="titre">Bienvenue dans l'accès privé de DavidLange</h1>
+<div class="container">
+  <h2>Veuillez vous connecter</h2>
+
+  <form action="{{ path('login') }}" method="post">
+    <div class="connexion">
+      <div class="utilisateur">
+        <label for="username">Email</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" class="form-control" />
+      </div>
+      <div class="password">
+        <label for="password">Mot de passe</label>
+        <input type="password" id="password" name="_password" class="form-control" />
+      </div>
+      {# If you want to control the URL the user is redirected to on success#}
+      <input type="hidden" name="_target_path" value="client/index.html.twig" />
+      {# CSRF Token does not work <input type="hidden" name="_csrf_token" value="{{ csrf_token("authenticate") }}#}
+      <button class="btn btn-lg btn-primary connect" type="submit">Connexion</button>
+    </div>
+  </form>
+</div>
+
+{% include 'menu/_footer.html.twig' %} {% endblock %}

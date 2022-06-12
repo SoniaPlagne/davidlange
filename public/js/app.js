@@ -1,11 +1,14 @@
 $(document).ready(function () {
-  $(".slider").slick({});
+  $(".carousel").slick({
+    centerMode: true,
+  });
 });
 
 $(".center").slick({
   centerMode: true,
   centerPadding: "60px",
-  slidesToShow: 3,
+  slidesToShow: 4,
+
   responsive: [
     {
       breakpoint: 768,
@@ -13,7 +16,7 @@ $(".center").slick({
         arrows: false,
         centerMode: true,
         centerPadding: "40px",
-        slidesToShow: 3,
+        slidesToShow: 4,
       },
     },
     {

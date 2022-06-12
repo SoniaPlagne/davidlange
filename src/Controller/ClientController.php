@@ -19,4 +19,16 @@ class ClientController extends AbstractController
     
         ]);
     }
+
+    /**
+     * @Route("/videos_sav", name="videos_sav")
+     */
+    public function videos_sav(): Response
+    {
+        return $this->render('client/videos_sav.html.twig', 
+        [
+            'controller_name' => 'ClientController',
+    
+        ]);
+    }
 }

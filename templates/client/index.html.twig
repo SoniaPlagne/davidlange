@@ -1,17 +1,21 @@
 {% extends 'base.html.twig' %} {% block title %} Accueil client Rochebobois {% endblock %} {% block body %} {% include
 'menu/_header.html.twig' %}
 
-<h1 class="center">Bienvenue sur votre accueil client</h1>
-<button class="logout">
-  <a href="/logout">Déconnexion</a>
-</button>
+<div class="title-client">
+  <h1 class="titre">Bienvenue sur votre accueil client</h1>
+  <form action="/app_logout">
+    <button type="submit" class="logout">Déconnexion</button>
+  </form>
+</div>
+
 <h2 class="center">Cliquez sur une des rubriques ci-dessous pour accéder à son contenu</h2>
 
 <div class="btn-client">
-  <button class="video-sav btn-actif btn-roche">
-    <a href="/videos">Vidéos SAV</a>
-  </button>
-  <button class="fiches-produit btn-inactif btn-roche">Fiches produit</button>
+  <form action="/videos_sav">
+    <button class="video-sav btn-actif btn-roche">Vidéos SAV</button>
+  </form>
+
+  <button class="fiches-produit btn-inactif btn-roche">Fiches produits</button>
   <button class="nouveautes btn-inactif btn-roche">Nouveautés</button>
 </div>
 {% endblock %}
