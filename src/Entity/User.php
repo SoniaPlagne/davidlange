@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -56,6 +58,28 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      * @ORM\Column(type="string", length=255)
      */
     private $nom;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Actualite::class, inversedBy="users")
+     */
+    private $Actualite;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Emploi::class, inversedBy="users")
+     */
+    private $Emploi;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Video::class, inversedBy="users")
+     */
+    private $Video;
+
+    public function __construct()
+    {
+        $this->Actualite = new ArrayCollection();
+        $this->Emploi = new ArrayCollection();
+        $this->Video = new ArrayCollection();
+    }
 
 
     public function getId(): ?int
@@ -184,6 +208,78 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setNom(string $nom): self
     {
         $this->nom = $nom;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Actualite>
+     */
+    public function getActualite(): Collection
+    {
+        return $this->Actualite;
+    }
+
+    public function addActualite(Actualite $actualite): self
+    {
+        if (!$this->Actualite->contains($actualite)) {
+            $this->Actualite[] = $actualite;
+        }
+
+        return $this;
+    }
+
+    public function removeActualite(Actualite $actualite): self
+    {
+        $this->Actualite->removeElement($actualite);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Emploi>
+     */
+    public function getEmploi(): Collection
+    {
+        return $this->Emploi;
+    }
+
+    public function addEmploi(Emploi $emploi): self
+    {
+        if (!$this->Emploi->contains($emploi)) {
+            $this->Emploi[] = $emploi;
+        }
+
+        return $this;
+    }
+
+    public function removeEmploi(Emploi $emploi): self
+    {
+        $this->Emploi->removeElement($emploi);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Video>
+     */
+    public function getVideo(): Collection
+    {
+        return $this->Video;
+    }
+
+    public function addVideo(Video $video): self
+    {
+        if (!$this->Video->contains($video)) {
+            $this->Video[] = $video;
+        }
+
+        return $this;
+    }
+
+    public function removeVideo(Video $video): self
+    {
+        $this->Video->removeElement($video);
 
         return $this;
     }
