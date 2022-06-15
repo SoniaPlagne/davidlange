@@ -27,6 +27,11 @@ class Actualite
      */
     private $contenu;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Image::class, inversedBy="actualites")
+     */
+    private $Image;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Actualite
     public function setContenu(string $contenu): self
     {
         $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getImage(): ?Image
+    {
+        return $this->Image;
+    }
+
+    public function setImage(?Image $Image): self
+    {
+        $this->Image = $Image;
 
         return $this;
     }
