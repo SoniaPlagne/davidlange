@@ -1,25 +1,27 @@
 <?php
 
-namespace AdminController;
+namespace App\Controller\Admin;
 
 use App\Entity\Emploi;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
-class EmploiCrudController extends AbstractCrudController
+class Emploi2CrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
         return Emploi::class;
     }
 
-    /*
     public function configureFields(string $pageName): iterable
     {
         return [
             IdField::new('id'),
-            TextField::new('title'),
+            TextField::new('titre'),
             TextEditorField::new('description'),
         ];
     }
-    */
+
 }
