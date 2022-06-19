@@ -13,9 +13,11 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\DashboardControllerInterface;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
 
 class DashboardController extends AbstractDashboardController
 {
+
     /**
      * @Route("/admin", name="admin")
      */
@@ -27,7 +29,8 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('David Lange');
+            ->setTitle('David Lange')
+            ->disableUrlSignatures();
     }
 
     public function configureMenuItems(): iterable
@@ -37,6 +40,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Actualités', 'fas fa-newspaper', Actualite::class);
         yield MenuItem::linkToCrud('Emplois','fas fa-briefcase', Emploi::class);
         yield MenuItem::linkToCrud('Videos', 'fas fa-video', Video::class);
+        yield MenuItem::linkToCrud('Clients', 'fas fa-users', User::class);
+       # yield MenuItem::linkToLogout('Déconnexion', 'fas fa-sign-out-alt');
 
     }
         
