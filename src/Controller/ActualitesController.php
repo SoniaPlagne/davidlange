@@ -19,7 +19,7 @@ class ActualitesController extends AbstractController
         
         $actualites = $actualiteRepository->findAll();
         
-        return $this->render('default/actualites.html.twig', [
+        return $this->render('actualites/index.html.twig', [
             'actualites' =>$actualites
         ]);
     }
@@ -30,7 +30,7 @@ class ActualitesController extends AbstractController
     public function vueActualite(Actualite $actualite)
     {
 
-        return $this->render('default/vueActualite.html.twig', [
+        return $this->render('actualites/vueActualite.html.twig', [
             'actualite' =>$actualite
         ]);
     }

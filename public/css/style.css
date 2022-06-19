@@ -57,8 +57,18 @@ a.shop {
   text-transform: uppercase;
 }
 
+a.btn-retour {
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1.8rem;
+  text-align: center;
+  color: #cfb44f;
+  background-color: #1d1d1d;
+  text-decoration: none;
+}
 .btn-actif {
   background-color: #cfb44f;
+  color: #1d1d1d;
 }
 
 .btn-client {
