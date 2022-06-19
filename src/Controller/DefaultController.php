@@ -40,11 +40,6 @@ class DefaultController extends AbstractController
     }
 
 
-     
-
-
-    
-
      /**
      * @Route("/contact", name="contact")
      */

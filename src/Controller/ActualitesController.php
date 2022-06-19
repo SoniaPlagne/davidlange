@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Actualite;
 use App\Repository\ActualiteRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -29,6 +30,24 @@ class ActualitesController extends AbstractController
      */
     public function vueActualite(Actualite $actualite)
     {
+
+        return $this->render('actualites/vueActualite.html.twig', [
+            'actualite' =>$actualite
+        ]);
+    }
+
+    /**
+     * @Route("/actualites/ajouter", name="ajout_actualite")
+     */
+    public function ajouterActualite(EntityManagerInterface $manager)
+    {
+        $actualite = new Actualite();
+        $actualite->setTitre("Titre de l'actualité");
+        $actualite->setContenu("Contenu de l'actualité");
+        #$actualite->setImage("file");
+
+        $manager->persist($actualite);
+        $manager->flush();
 
         return $this->render('actualites/vueActualite.html.twig', [
             'actualite' =>$actualite
