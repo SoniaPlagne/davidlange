@@ -3,7 +3,12 @@
 
 <h1 class="titre">Si vous souhaitez nous rejoindre, c'est par ici!</h1>
 
-{% if emplois is defined %}
+<p class="light">
+  Si aucun de nos emplois proposés ne correspond à vos compétences, n'hésitez pas à nous envoyer votre CV ainsi qu'une
+  lettre de motivation à l'adresse suivante :
+  <a href="mailto:contact@davidlange.fr" target="_blank">contact@davidlange.com</a> en précisant dans l'objet de votre
+  email -- Candidature Spontanée -- .
+</p>
 
 <ul>
   {% for emploi in emplois %}
@@ -13,10 +18,4 @@
   {% endfor %}
 </ul>
 
-{% elseif emplois is not defined %}
-<p class="emploi">
-  "Nous n'avons actuellement pas de poste à pourvoir, mais vous pouvez si vous le souhaitez nous envoyer votre CV ainsi
-  qu'une lettre de motivation à l'adresse suivante: contact@davidlange.fr"
-</p>
-
-{% endif %} {% include 'menu/_footer.html.twig' %} {% endblock %}
+{% include 'menu/_footer.html.twig' %} {% endblock %}
