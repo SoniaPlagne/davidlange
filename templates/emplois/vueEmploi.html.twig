@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %} {% block title %}
 {{ emploi.titre }}
 {% endblock %} {% block body %} {% include 'menu/_header.html.twig' %}
-<button>Retour</button>
+<a href="/emploi" class="btn-retour">Retour</a>
 <h1>{{ emploi.titre }}</h1>
 <p>{{ emploi.descriptif }}</p>
 {% include 'menu/_footer.html.twig' %} {% endblock %}

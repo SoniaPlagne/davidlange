@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Actualite;
 use App\Entity\Emploi;
 use App\Entity\Video;
 use App\Repository\ActualiteRepository;
@@ -41,54 +40,7 @@ class DefaultController extends AbstractController
     }
 
 
-     /**
-     * @Route("/emploi", name="liste_emplois",methods={"GET"})
-     */
-    public function listeEmplois(EmploiRepository $emploiRepository): Response
-    {
-        $emplois = $emploiRepository->findAll();
-        
-        
-        return $this->render('default/emploi.html.twig', [
-            'emplois' =>$emplois
-        ]);
-    }
-    
-    /**
-     * @Route("/emploi/{id}", name="vue_emploi", requirements={"id"="\d+"}, methods={"GET"})
-     */
-    public function vueEmploi(Emploi $emploi)
-    {
-
-
-        return $this->render('default/vueEmploi.html.twig', [
-            'emploi' =>$emploi
-        ]);
-    }
-    
-    /*
-    /**
-     * @Route("/emploi/ajouter", name="ajout_emploi")
-     */
-
-     public function ajouter(EntityManagerInterface $manager)
-     {
-         $form =$this->createFormBuilder()
-         ->add('titre', TextType::class, [
-             'label' => "Titre de l'emploi"
-         ])
-         ->add('descriptif', TextareaType::class, [
-             'label' => "Descriptif du poste proposé"
-         ])
-         ->getForm();
-
-         return $this->render('default/ajoutEmploi.html.twig',[
-             'form' => $form->createView()
-
-         ]);
-
-     }
-
+     
 
 
     
