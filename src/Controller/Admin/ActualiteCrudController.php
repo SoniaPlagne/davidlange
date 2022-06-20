@@ -3,11 +3,15 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Actualite;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface;
 
 class ActualiteCrudController extends AbstractCrudController
 {
@@ -16,15 +20,27 @@ class ActualiteCrudController extends AbstractCrudController
         return Actualite::class;
     }
 
+    public function configureCrud(Crud $crud): Crud
+{
+    return $crud
+   
+    ;
+
+}
+
     public function configureFields(string $pageName): iterable
     {
         return [
-            IdField::new('id'),
             TextField::new('titre'),
-            TimeField::new('duree'),
             TextEditorField::new('contenu'),
-
-
         ];
+    }
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+        ->update(Crud::PAGE_INDEX, Action::NEW,
+             fn (Action $action) => $action->setLabel('Ajouter une actualité'))
+
+        ;
     }
 }

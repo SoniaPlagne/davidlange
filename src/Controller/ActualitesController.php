@@ -37,7 +37,7 @@ class ActualitesController extends AbstractController
     }
 
     /**
-     * @Route("/actualites/ajouter", name="ajout_actualite")
+     * @Route("/actualites/ajouter", name="ajoutActualite")
      */
     public function ajouterActualite(EntityManagerInterface $manager)
     {
