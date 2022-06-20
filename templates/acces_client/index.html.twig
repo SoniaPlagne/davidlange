@@ -8,12 +8,12 @@
   <div class="mb-3">You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a></div>
   {% endif %}
 
-  <h1 class="titre">Bienvenue dans l'accès privé des clients de DavidLange</h1>
+  <h1 class="titre">Bienvenue sur l'interface d'accès réservée à nos clients Premium</h1>
   <div class="container">
-    <h2>Veuillez vous connecter</h2>
+    <h2>Veuillez vous connecter :</h2>
     <div class="connexion">
       <div class="utilisateur">
-        <label for="inputUsername">Nom d'utilisateur </label>
+        <label for="inputUsername">Votre email</label>
         <input
           type="text"
           value="{{ last_username }}"
