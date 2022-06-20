@@ -38,10 +38,10 @@ class EmploisController extends AbstractController
     
     /*
     /**
-     * @Route("/emploi/ajouter", name="ajout_emploi")
+     * @Route("/emploi/ajouter", name="ajoutEmploi")
      */
 
-     public function ajouter(EntityManagerInterface $manager)
+     public function ajouterEmploi(EntityManagerInterface $manager)
      {
          $form =$this->createFormBuilder()
          ->add('titre', TextType::class, [

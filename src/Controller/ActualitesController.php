@@ -42,6 +42,7 @@ class ActualitesController extends AbstractController
     public function ajouterActualite(EntityManagerInterface $manager)
     {
         $actualite = new Actualite();
+
         $actualite->setTitre("Titre de l'actualité");
         $actualite->setContenu("Contenu de l'actualité");
         #$actualite->setImage("file");
